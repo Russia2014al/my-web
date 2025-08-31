@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p_51z about</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Custom font import for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        
+        /* Define color variables for both dark and light modes */
+        :root {
+            --bg-primary: #111827;
+            --text-primary: #FFFFFF;
+            --card-bg: rgba(31, 41, 55, 0.6);
+            --border-color: rgba(75, 85, 99, 0.4);
+            --link-bg: #1f2937;
+            --link-hover-bg: #374151;
+        }
+
+        .light {
+            --bg-primary: #F3F4F6;
+            --text-primary: #1F2937;
+            --card-bg: rgba(255, 255, 255, 0.6);
+            --border-color: rgba(209, 213, 219, 0.4);
+            --link-bg: #E5E7EB;
+            --link-hover-bg: #D1D5DB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .dashboard-card {
+            backdrop-filter: blur(10px);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-link-item {
+            background-color: var(--link-bg);
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .dashboard-link-item:hover {
+            background-color: var(--link-hover-bg);
+            transform: scale(1.02);
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animate-gradient-xy {
+            background-size: 200% 200%;
+            animation: gradient-xy 15s ease infinite;
+        }
+        @keyframes gradient-xy {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 overflow-x-hidden relative">
+
+    <!-- Subtle gradient background -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black animate-gradient-xy light:bg-gradient-to-br light:from-gray-300 light:to-white"></div>
+
+    <!-- Dark/Light Mode Toggle Button -->
+    <button id="theme-toggle" class="absolute top-4 right-4 p-2 rounded-full text-white light:text-gray-800 bg-gray-700 light:bg-gray-300 hover:bg-gray-600 light:hover:bg-gray-400 z-20 transition-colors">
+        <i id="theme-icon" class="fa-solid fa-sun text-2xl"></i>
+    </button>
+    
+    <!-- Language Toggle Button -->
+    <button id="lang-toggle" class="absolute top-4 left-4 p-2 rounded-full text-white bg-gray-700 hover:bg-gray-600 transition-colors z-20 text-sm font-medium">
+        العربية
+    </button>
+
+    <!-- Main dashboard grid container -->
+    <div class="z-10 w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+
+        <!-- Profile Card -->
+        <div class="dashboard-card rounded-xl p-6 text-center transition-all duration-500 mb-6 col-span-1 md:col-span-2 lg:col-span-1">
+            <img id="profile-image" 
+                 src="goofy apple from ohio.jpeg" 
+                 alt="Profile Picture" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-600 light:border-gray-400 shadow-md transition-all duration-300 transform hover:scale-110 hover:rotate-3">
+            <h1 id="user-name" class="text-3xl font-bold mb-2">p_51z</h1>
+            <p id="user-title" class="text-lg text-gray-400 light:text-gray-600 mb-4">TikTok & YouTube Creator</p>
+            <p id="user-bio" class="text-gray-300 light:text-gray-700 text-sm mb-6 leading-relaxed">
+                Welcome to my official page! Find all my content and social links below. I create content about video games, art, and daily vlogs.
+            </p>
+        </div>
+
+        <!-- Social Links Card -->
+        <div class="dashboard-card rounded-xl p-6 col-span-1 lg:col-span-1">
+            <h2 id="social-links-heading" class="text-xl font-semibold text-white light:text-gray-800 mb-4">My Content & Socials</h2>
+            <ul id="link-list" class="space-y-4">
+                <li class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-brands fa-youtube text-red-500 text-2xl"></i>
+                    <a id="youtube-link" href="https://www.youtube.com/@cjbn-power" class="font-medium text-gray-200 light:text-gray-800 hover:underline">My YouTube Channel</a>
+                </li>
+                <li class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-brands fa-tiktok text-white light:text-gray-800 text-2xl"></i>
+                    <a id="tiktok-link" href="https://www.tiktok.com/@p_51z" class="font-medium text-gray-200 light:text-gray-800 hover:underline">My TikTok Profile: p_51z</a>
+                </li>
+                <li class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-brands fa-instagram text-pink-500 text-2xl"></i>
+                    <a id="instagram-link" href="https://www.instagram.com" class="font-medium text-gray-200 light:text-gray-800 hover:underline">Instagram Page</a>
+                </li>
+                <li class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-brands fa-twitch text-purple-500 text-2xl"></i>
+                    <a id="twitch-link" href="https://www.twitch.tv" class="font-medium text-gray-200 light:text-gray-800 hover:underline">Twitch Channel</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Analytics/Stats Card -->
+        <div class="dashboard-card rounded-xl p-6 col-span-1 lg:col-span-1">
+            <h2 id="stats-heading" class="text-xl font-semibold text-white light:text-gray-800 mb-4">Creator Stats</h2>
+            <div>
+                <div class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-solid fa-users text-blue-400 text-2xl"></i>
+                    <div>
+                        <p id="subscribers-label" class="text-gray-400 light:text-gray-600 text-sm">Total Subscribers</p>
+                        <p id="subscribers-count" class="text-2xl font-bold text-white light:text-gray-800">93</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Exploring Card -->
+        <div class="dashboard-card rounded-xl p-6 col-span-1 md:col-span-2">
+            <h2 id="exploring-heading" class="text-xl font-semibold text-white light:text-gray-800 mb-4">Exploring New Ideas</h2>
+            <div class="space-y-4">
+                <div class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-solid fa-microscope text-green-400 text-2xl"></i>
+                    <div>
+                        <p id="exploring-project-title" class="font-medium text-gray-200 light:text-gray-800">New Art Style: Pixel & Vector</p>
+                        <p id="exploring-project-status" class="text-gray-400 light:text-gray-600 text-sm">In progress • 1 week</p>
+                    </div>
+                </div>
+                <div class="dashboard-link-item p-4 rounded-xl flex items-center space-x-4">
+                    <i class="fa-solid fa-gamepad text-orange-400 text-2xl"></i>
+                    <div>
+                        <p id="exploring-game-title" class="font-medium text-gray-200 light:text-gray-800">Indie Web Dev: Prototyping</p>
+                        <p id="exploring-game-status" class="text-gray-400 light:text-gray-600 text-sm">Brainstorming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+            const langToggle = document.getElementById('lang-toggle');
+            
+            // Text content for different languages
+            const translations = {
+                'en': {
+                    'userName': 'p_51z',
+                    'userTitle': 'TikTok & YouTube Creator',
+                    'userBio': 'Welcome to my official page! Find all my content and social links below. I create content about video games, art, and daily vlogs.',
+                    'socialLinksHeading': 'My Content & Socials',
+                    'youtubeLink': 'My YouTube Channel',
+                    'tiktokLink': 'My TikTok Profile: p_51z',
+                    'instagramLink': 'Instagram Page',
+                    'twitchLink': 'Twitch Channel',
+                    'statsHeading': 'Creator Stats',
+                    'subscribersLabel': 'Total Subscribers',
+                    'exploringHeading': 'Exploring New Ideas',
+                    'exploringProjectTitle': 'New Art Style: Pixel & Vector',
+                    'exploringProjectStatus': 'In progress • 1 week',
+                    'exploringGameTitle': 'Indie Web Dev: Prototyping',
+                    'exploringGameStatus': 'Brainstorming',
+                    'langToggleText': 'العربية'
+                },
+                'ar': {
+                    'userName': 'p_51z',
+                    'userTitle': 'منشئ محتوى تيك توك و يوتيوب',
+                    'userBio': 'أهلاً بك في صفحتي الرسمية! يمكنك العثور على جميع محتوياتي وروابتي الاجتماعية أدناه. أقوم بإنشاء محتوى حول ألعاب الفيديو والفن والمدونات اليومية.',
+                    'socialLinksHeading': 'محتواي ووسائل التواصل',
+                    'youtubeLink': 'قناتي على يوتيوب',
+                    'tiktokLink': 'صفحتي على تيك توك: p_51z',
+                    'instagramLink': 'صفحتي على انستغرام',
+                    'twitchLink': 'قناتي على تويتش',
+                    'statsHeading': 'إحصائيات المنشئ',
+                    'subscribersLabel': 'إجمالي المشتركين',
+                    'exploringHeading': 'استكشاف أفكار جديدة',
+                    'exploringProjectTitle': 'نمط فني جديد: بكسل وفيكتور',
+                    'exploringProjectStatus': 'قيد التنفيذ • أسبوع',
+                    'exploringGameTitle': 'تطوير مواقع الويب المستقلة: وضع النماذج الأولية',
+                    'exploringGameStatus': 'عصف ذهني',
+                    'langToggleText': 'English'
+                }
+            };
+
+            function updateContent(lang) {
+                const isArabic = lang === 'ar';
+                htmlElement.lang = lang;
+                htmlElement.dir = isArabic ? 'rtl' : 'ltr';
+
+                document.getElementById('user-name').textContent = translations[lang].userName;
+                document.getElementById('user-title').textContent = translations[lang].userTitle;
+                document.getElementById('user-bio').textContent = translations[lang].userBio;
+                document.getElementById('social-links-heading').textContent = translations[lang].socialLinksHeading;
+                document.getElementById('youtube-link').textContent = translations[lang].youtubeLink;
+                document.getElementById('tiktok-link').textContent = translations[lang].tiktokLink;
+                document.getElementById('instagram-link').textContent = translations[lang].instagramLink;
+                document.getElementById('twitch-link').textContent = translations[lang].twitchLink;
+                document.getElementById('stats-heading').textContent = translations[lang].statsHeading;
+                document.getElementById('subscribers-label').textContent = translations[lang].subscribersLabel;
+                document.getElementById('exploring-heading').textContent = translations[lang].exploringHeading;
+                document.getElementById('exploring-project-title').textContent = translations[lang].exploringProjectTitle;
+                document.getElementById('exploring-project-status').textContent = translations[lang].exploringProjectStatus;
+                document.getElementById('exploring-game-title').textContent = translations[lang].exploringGameTitle;
+                document.getElementById('exploring-game-status').textContent = translations[lang].exploringGameStatus;
+                langToggle.textContent = translations[lang].langToggleText;
+            }
+
+            let currentLang = 'en';
+
+            langToggle.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                updateContent(currentLang);
+            });
+            
+            // Set initial content on page load
+            updateContent(currentLang);
+
+            themeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('light');
+                if (htmlElement.classList.contains('light')) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
